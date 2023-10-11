@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostsController;
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,7 +20,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get("posts",[PostsController::class,"getPosts"]);
-Route::get("test",function(Request $request){
-    return "hello";
-});
+Route::get("all",[CategoryController::class,"getAllCategories"]);
